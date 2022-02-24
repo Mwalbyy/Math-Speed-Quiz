@@ -1,0 +1,93 @@
+*, *::before, *::after{
+   box-sizing: border-box;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+body {
+    background-color: rgb(0, 109, 160);
+    
+}
+
+#quizTimer {
+    text-align: center;
+}
+
+#question {
+    
+    color: white;
+    text-align: center;
+}
+#current {
+    color: white;
+    text-align: center;
+}
+
+.container { 
+    margin: auto;
+    background-color: black;
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+    font-size: 40px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    font-size: 40px;
+    gap: 10px;
+    margin: 20px 0;
+}
+.btn{
+    margin-top: 30px;
+    font-size: 20px;
+    background-color: rgb(0, 153, 255);
+    border-radius: 5px;
+    outline: none;
+    border-color: rgb(148, 148, 148) ;
+}
+
+.btn.correct {
+    background-color: green;
+    
+}
+.btn.wrong {
+    background-color: red;
+    color: rgb(255, 255, 255);
+}
+
+
+.btn:hover{
+    border-color:rgb(0, 0, 0) ;
+}
+.controls {
+    display: flex;
+    justify-content: center
+    
+}
+.start-btn {
+    font-size: 50px;
+}
+.next-btn {
+    font-size: 50px
+}
+
+
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+}
+
+
+.formBox {
+    
+    font-size: 30px;
+}
+
+.none {
+    display: none;
+}

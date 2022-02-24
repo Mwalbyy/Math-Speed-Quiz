@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assests/css/style.css" />
+    <script defer src="./assests/js/script.js"></script>
+    <title>Math Speed Quiz</title>
+  </head>
+
+  <body>
+    <form id="form-container" class="form-container none">
+      <div class="formBox">
+          <label for="name">Submit high score!:</label>
+          <input type="text" id="name" placeholder="Example: MW"/>
+      </div>
+      <div class="formBox">
+          <button id="btn">Click to Submit</button>
+      </div>
+      <div id="msg">
+          <pre></pre>
+      </div>
+  </form>
+    <div id="quizTimer">
+      <h1 id="timerHead" class="none">Quiz Timer</h1>
+      <p id="quizTimerDisplay" class="none">00:30</p>
+    </div>
+    <div class="container">
+      <div id="question-container" class="none">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn none">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
