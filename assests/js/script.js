@@ -1,3 +1,4 @@
+//global variables
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const questionContainerElement = document.getElementById("question-container");
@@ -10,13 +11,13 @@ let sec = 30;
 let finalScore = 0;
 
 let shuffledQuestions, currentQuestionIndex;
-
+//event listeners for my buttons
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
-
+//starts the game 
 function startGame() {
   startButton.classList.add("none");
   timerHead.classList.remove("none");
@@ -27,12 +28,12 @@ function startGame() {
   questionContainerElement.classList.remove("none");
   setNextQuestion();
 }
-
+//calls function 
 function setNextQuestion() {
   resetState();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
-
+//creates a button for each of the answers to a question
 function showQuestion(question) {
   questionElement.innerText = question.question;
   question.answers.forEach((answer) => {
@@ -46,7 +47,7 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button);
   });
 }
-
+//fixed issue where the previous questions remained after pressing next
 function resetState() {
   nextButton.classList.add("none");
   while (answerButtonsElement.firstChild) {
@@ -54,8 +55,8 @@ function resetState() {
   }
 }
 
-function selectAnswer(e) {
-  const selectedButton = e.target;
+function selectAnswer(event) {
+  const selectedButton = event.target;
   const correct = selectedButton.dataset.correct;
   setStatusClass(document.body, correct);
   Array.from(answerButtonsElement.children).forEach((button) => {
@@ -74,7 +75,7 @@ function selectAnswer(e) {
   }
   nextButton.classList.remove("none");
 }
-
+//system for adding score for every correct answer 50+ for incorrect 100+ for correct
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
@@ -86,12 +87,12 @@ function setStatusClass(element, correct) {
     ;
   }
 }
-
+// function for removing the classes that change the color of the questions
 function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
-
+//variable containing questions
 const questions = [
   {
     question: "what is 4 + 4",
@@ -121,23 +122,24 @@ const questions = [
     ],
   },
 ];
-
+//ends game when the timer hits 0
 function gameOver() {
   window.alert("You Lose! Try again some other time!");
   window.location.reload();
 }
-
+//timer function for the quiz
 function timer() {
   var timer = setInterval(function () {
     document.getElementById("quizTimerDisplay").innerHTML = "00:" + sec;
     sec--;
     if (sec < 0) {
+      //ends game when timer hits 0
       gameOver();
       clearInterval(timer);
     }
   }, 1000);
 }
-
+//local storage system
 let scoreSaved = [];
 const addScore = (ev) => {
   ev.preventDefault();
