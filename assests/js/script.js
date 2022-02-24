@@ -67,6 +67,10 @@ function selectAnswer(e) {
     startButton.innerText = "restart";
     startButton.classList.remove("none");
     formInfo.classList.remove("none");
+    timerHead.classList.add("none")
+    timerCount.classList.add("none")
+    sec += 1000;
+
   }
   nextButton.classList.remove("none");
 }
@@ -79,7 +83,7 @@ function setStatusClass(element, correct) {
     console.log(finalScore);
   } else {
     element.classList.add("wrong");
-    sec -= 1;
+    ;
   }
 }
 
@@ -133,11 +137,6 @@ function timer() {
     }
   }, 1000);
 }
-
-
-
-
-
 
 let scoreSaved = [];
 const addScore = (ev) => {
